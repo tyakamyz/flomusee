@@ -17,8 +17,8 @@
 `theme.extend.colors` 예시:
 ```js
 colors: {
-  primary: "#1f3a32",
-  primaryDark: "#162d26",
+  primary: "#234033",
+  primaryDark: "#1B3227",
   primarySoft: "#D7E4DC",
   accentCoral: "#F28D8D",
   bgPage: "#F5EFE6",
@@ -27,6 +27,7 @@ colors: {
   textMuted: "#6B7280",
   textSubtle: "#9CA3AF",
   textOnPrimary: "#FFFFFF",
+  textOnAccent: "#FFFFFF",
 },
 ```
 
