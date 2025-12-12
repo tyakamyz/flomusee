@@ -6,6 +6,10 @@
 - 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero/Intro/Flow/Plan/Artist/FAQ 섹션), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의한다.
 - 빌드·실행 설정은 `next.config.ts`, 타입 설정은 `tsconfig.json`, 린트 규칙은 `eslint.config.mjs`에 정의되어 있다. `.next/` 등 생성 산출물은 커밋하지 않는다.
 
+## 랜딩 카피/컴포넌트 가이드
+- 브랜드 카피는 한글 기준으로 고정한다(예: Hero 헤드라인 “집 안에 열리는 작은 미술관, 플로뮤제”). FAQ/서비스 소개/플로우/아티스트 섹션 카피는 의도적으로 줄바꿈을 포함하므로 `whitespace-pre-line` 등의 Tailwind 클래스로 처리한다.
+- 단일 페이지 구성 시 `FlomuseeLandingPage` 같은 컴포넌트를 만들어 Hero → Service Intro → Subscription Flow → Artist & Theme → FAQ 순으로 배치하고, 컨테이너는 `max-w-6xl mx-auto px-4 py-16`을 기본으로 사용한다. Primary 버튼은 `bg-[#1f3a32] text-white rounded-full hover:bg-[#13261f]` 톤을 유지한다.
+
 ## 빌드·테스트·개발 명령
 - `npm install`로 의존성을 동기화한다(`package-lock.json`을 사용하므로 npm 권장).
 - `npm run dev`: 개발 서버(기본 `http://localhost:3000`)와 HMR 실행.
