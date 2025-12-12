@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #1f3a32;
+  --color-primary-dark: #13261f;
+  --color-primary-soft: #e7f0e8;
+  --color-bg-base: #f8f3ec;
+  --color-bg-surface: #ffffff;
+  --color-bg-subtle: #f3eee6;
+  --color-text-main: #1f1a17;
+  --color-text-muted: #5b554f;
+  --color-text-disabled: #a6a09a;
+  --color-border-subtle: #e5ded4;
+  --color-border-strong: #d1c8bb;
+  --color-accent-coral: #e69a8d;
+  --color-accent-mustard: #d1a540;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-accent-coral: var(--color-accent-coral);
+  --color-accent-mustard: var(--color-accent-mustard);
+  --color-bg-base: var(--color-bg-base);
+  --color-bg-surface: var(--color-bg-surface);
+  --color-bg-subtle: var(--color-bg-subtle);
+  --color-text-main: var(--color-text-main);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-disabled: var(--color-text-disabled);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-strong: var(--color-border-strong);
+  --font-heading: var(--font-playfair), "Cormorant Garamond", var(--font-geist-sans), system-ui, sans-serif;
+  --font-body: "Pretendard", "SUIT", var(--font-geist-sans), system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg-base);
+  color: var(--color-text-main);
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+.text-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.text-h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 2.4vw, 2.5rem);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.text-h4 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.text-body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+.text-caption {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
 }

@@ -10,10 +10,9 @@ type SectionProps = {
 };
 
 const variantClasses: Record<SectionVariant, string> = {
-  default: "bg-white text-zinc-900 dark:bg-black dark:text-white",
-  muted:
-    "bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 border-y border-zinc-100 dark:border-zinc-900",
-  dark: "bg-zinc-900 text-white dark:bg-zinc-900 dark:text-white",
+  default: "bg-bg-base text-text-main",
+  muted: "bg-bg-subtle text-text-main border-y border-border-subtle",
+  dark: "bg-primary text-white",
 };
 
 export function Section({

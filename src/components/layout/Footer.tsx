@@ -1,16 +1,23 @@
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-100 bg-white/80 backdrop-blur dark:border-zinc-900 dark:bg-black/70">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-6 text-sm text-zinc-600 dark:text-zinc-300 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-12">
-        <span className="font-semibold text-zinc-800 dark:text-zinc-100">
-          FLOMUSÉE
-        </span>
-        <div className="flex flex-wrap gap-4">
+    <footer className="border-t border-border-subtle bg-bg-subtle">
+      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-text-muted sm:flex-row sm:items-start sm:justify-between sm:px-8 lg:px-12">
+        <div className="flex flex-col gap-2">
+          <span className="text-base font-semibold text-text-main">
+            FLOMUSÉE
+          </span>
+          <p className="max-w-sm text-sm leading-relaxed">
+            집 안에 열리는 작은 미술관. 계절의 꽃과 아티스트 오브제를 함께
+            큐레이션합니다.
+          </p>
+        </div>
+        <div className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-text-main">Links</span>
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-black dark:hover:text-white"
+            className="transition-colors hover:text-text-main"
           >
             Instagram
           </a>
@@ -18,20 +25,32 @@ export function Footer() {
             href="https://pf.kakao.com"
             target="_blank"
             rel="noreferrer"
-            className="transition-colors hover:text-black dark:hover:text-white"
+            className="transition-colors hover:text-text-main"
           >
             Kakao Channel
           </a>
           <a
             href="/contact"
-            className="transition-colors hover:text-black dark:hover:text-white"
+            className="transition-colors hover:text-text-main"
           >
             Contact
           </a>
         </div>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400">
-          꽃과 예술이 만나는 정기 구독 뮤지엄, FLOMUSÉE.
-        </p>
+        <div className="flex flex-col gap-2 text-sm">
+          <span className="font-semibold text-text-main">Policies</span>
+          <a href="#" className="transition-colors hover:text-text-main">
+            Terms
+          </a>
+          <a href="#" className="transition-colors hover:text-text-main">
+            Privacy
+          </a>
+          <a
+            href="mailto:team@flomusee.co.kr"
+            className="transition-colors hover:text-text-main"
+          >
+            team@flomusee.co.kr
+          </a>
+        </div>
       </div>
     </footer>
   );

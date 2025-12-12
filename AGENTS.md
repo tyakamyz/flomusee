@@ -3,7 +3,7 @@
 ## 프로젝트 구조
 - Next.js App Router는 `src/app`에 위치하며, 공통 레이아웃은 `layout.tsx`, 기본 랜딩은 `page.tsx`이다. 신규 라우트는 `src/app/<route>/page.tsx` 형태로 추가한다. 현재 준비된 페이지: `/`, `/about`, `/artists`, `/subscribe`, `/contact`.
 - 전역 스타일은 `src/app/globals.css`, 정적 자원은 `public/`에 둔다.
-- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(랜딩 섹션), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의한다.
+- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero/Intro/Flow/Plan/Artist/FAQ 섹션), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의한다.
 - 빌드·실행 설정은 `next.config.ts`, 타입 설정은 `tsconfig.json`, 린트 규칙은 `eslint.config.mjs`에 정의되어 있다. `.next/` 등 생성 산출물은 커밋하지 않는다.
 
 ## 빌드·테스트·개발 명령
@@ -16,7 +16,20 @@
 - TypeScript 기반 React 함수형 컴포넌트 사용. 기본은 서버 컴포넌트, 브라우저 API나 훅이 필요할 때만 클라이언트 컴포넌트로 전환한다. 상태가 필요한 폼 등은 `use client`로 명시한다.
 - Next/ESLint 기본 포맷(2칸 들여쓰기, 세미콜론 사용, TSX 더블 쿼트)을 따른다. 불필요한 import·코드는 제거한다.
 - 네이밍: 컴포넌트·훅은 PascalCase(`HeroSection`, `useAuthGuard`), 유틸은 camelCase, 라우트 폴더는 kebab-case(`src/app/user-settings/page.tsx`). 데이터 샘플은 `site.ts`처럼 의미 있는 파일명으로 분리한다.
-- 스타일: Tailwind 유틸 클래스를 인라인으로 사용하고 공통 커스텀은 `globals.css`에 둔다. 다크/라이트 클래스 적용을 일관되게 유지한다.
+- 스타일: Tailwind v4 토큰을 `@theme`로 정의해 `bg-primary`, `text-main`, `border-subtle` 등으로 사용한다. 공통 타이포 유틸 `.text-h1`~`.text-caption`은 `globals.css`에 정의되어 있으니 헤딩/본문에 우선 사용.
+
+## 디자인 토큰 (요약)
+- 색상(`globals.css` @theme): primary `#1F3A32`, primary-dark `#13261F`, primary-soft `#E7F0E8`, bg-base `#F8F3EC`, bg-surface `#FFFFFF`, bg-subtle `#F3EEE6`, text-main `#1F1A17`, text-muted `#5B554F`, text-disabled `#A6A09A`, border-subtle `#E5DED4`, border-strong `#D1C8BB`, accent-coral `#E69A8D`, accent-mustard `#D1A540`.
+- 폰트: 헤딩 `var(--font-playfair)`(Playfair Display, next/font/google), 바디 `var(--font-body)`(Pretendard/SUIT/Geist). 전역 클래스 `.text-h1~4`, `.text-body`, `.text-caption` 활용.
+- 컴포넌트 스타일: Button(Primary/Secondary/Outline/Ghost) 모두 브랜드 컬러 적용, Card는 라운드 2xl + 섀도우, Section variant(default/muted/dark)로 배경 톤 제어.
+
+## 랜딩 섹션 구성
+- `HeroSection`: 브랜드 카피, CTA 2개, 오른쪽 구독 박스 카드.
+- `ServiceIntroSection`: 4개 특징 카드(꽃, 오브제, 월 배송, 스타일링 가이드).
+- `HowItWorksSection`: 4스텝 플로우 카드.
+- `PlanSection`: `PlanCard` 3종(Standard/Premium/Gift).
+- `ArtistHighlightSection`: 작가 카드 3종.
+- `FAQSection`: 정책/배송/회수 FAQ 카드.
 
 ## 테스트 가이드
 - 현재 공식 테스트 스위트는 없다. 추가 시 컴포넌트는 React Testing Library, 핵심 플로우는 Playwright를 권장한다.
@@ -36,7 +49,7 @@
 ## TODO (권장 작업)
 - `/api/contact`에 이메일 서비스(예: SendGrid/Resend) 혹은 CRM Webhook 연동 추가, 오류 로깅 및 레이트 리밋/캡차 적용.
 - 문의 접수 건 저장소 연동(Prisma+DB 또는 외부 로깅 서비스) 및 관리용 뷰 설계.
-- `src/data/site.ts`의 플랜/아티스트 정보에 실제 이미지, 가격, 배송 주기 확정 값 반영.
+- `src/data/site.ts`의 플랜/아티스트/특징 정보에 실제 이미지, 가격, 배송 주기 확정 값 반영.
 - SEO/OG 메타, 파비콘·소셜 이미지 추가 및 `metadata` 확장.
 - 접근성 점검: 키보드 포커스 스타일, 폼 필드 aria 라벨, 대비 확인.
 - 배포 환경 변수(Vercel) 설정: `NEXT_PUBLIC_*` 값 등록 및 비공개 키 필요 시 서버 전용 변수 추가.

@@ -1,46 +1,54 @@
 import { Button } from "@/components/common/Button";
 import { Section } from "@/components/common/Section";
-import { SectionTitle } from "@/components/common/SectionTitle";
 
 export function HeroSection() {
   return (
     <Section className="pt-12 sm:pt-16" variant="default">
-      <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex max-w-2xl flex-col gap-6">
-          <SectionTitle
-            title="꽃과 예술이 만나는 구독형 뮤지엄"
-            subtitle="FLOMUSÉE는 계절의 꽃과 아티스트의 오브제를 함께 큐레이션하여, 매달 새로운 전시를 집으로 전달합니다."
-            align="left"
-          />
+          <p className="text-sm uppercase tracking-[0.16em] text-text-muted">
+            A small museum at home
+          </p>
+          <h1 className="text-h1">
+            집 안에 열리는
+            <br />
+            작은 미술관, 플로뮤제
+          </h1>
+          <p className="max-w-xl text-body text-text-muted">
+            계절의 꽃과 아티스트 오브제를 함께 큐레이션해 한 달에 한 번,
+            작은 전시를 보내드립니다. 화병 회수/세척까지 포함된 순환형
+            구독으로 집 안을 홈 갤러리로 완성하세요.
+          </p>
           <div className="flex flex-wrap gap-3">
             <Button as="a" href="/subscribe">
-              구독 플랜 보기
+              첫 전시 구독하기
             </Button>
             <Button as="a" href="/artists" variant="secondary">
               협업 작가 살펴보기
             </Button>
           </div>
         </div>
-        <div className="relative w-full max-w-md overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-900 via-indigo-800 to-pink-500 p-[1px] shadow-lg">
-          <div className="h-full w-full rounded-[22px] bg-white p-8 dark:bg-black">
-            <div className="flex h-full flex-col justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">
-                  Signature Edition
-                </p>
-                <h3 className="mt-2 text-2xl font-semibold">
-                  Botanical Art Curation
-                </h3>
+        <div className="relative w-full max-w-lg overflow-hidden rounded-3xl border border-border-subtle bg-gradient-to-br from-bg-surface via-primary-soft to-bg-surface p-6 shadow-[0_14px_45px_rgba(20,30,25,0.12)]">
+          <div className="flex flex-col gap-4 rounded-2xl bg-bg-surface/80 p-6 backdrop-blur">
+            <div className="flex items-center justify-between">
+              <span className="text-caption text-text-muted">
+                Monthly Exhibition Box
+              </span>
+              <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold text-primary">
+                Signature
+              </span>
+            </div>
+            <h3 className="text-h3">Botanical Art Curation</h3>
+            <p className="text-sm leading-6 text-text-muted">
+              꽃다발 + 아티스트 오브제 + 아트 포스터/엽서. 배송 알림과 함께
+              화병 회수/세척까지 포함된 순환형 구독입니다.
+            </p>
+            <div className="grid grid-cols-2 gap-3 text-sm font-semibold text-text-main">
+              <div className="rounded-2xl border border-border-subtle bg-primary-soft px-4 py-3">
+                월 68,000원부터
               </div>
-              <p className="text-sm text-zinc-600 dark:text-zinc-300">
-                계절 꽃다발, 작가 오브제, 향초 또는 포스터가 함께 배송됩니다.
-                화병 회수/세척까지 포함된 순환형 구독을 제공합니다.
-              </p>
-              <div className="flex items-center justify-between rounded-2xl bg-zinc-50 p-4 text-sm font-semibold text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
-                <span>월 68,000원부터</span>
-                <span className="text-zinc-500 dark:text-zinc-400">
-                  매월 첫째 주 배송
-                </span>
+              <div className="rounded-2xl border border-border-subtle px-4 py-3 text-text-muted">
+                매월 첫째 주 배송
               </div>
             </div>
           </div>

@@ -2,6 +2,25 @@ import type { Artist } from "@/components/domain/ArtistCard";
 import type { FAQ } from "@/components/domain/FAQItem";
 import type { Plan } from "@/components/domain/PlanCard";
 
+export const features = [
+  {
+    title: "Curated Flowers",
+    description: "계절감과 공간 색감을 맞춘 꽃다발을 큐레이션합니다.",
+  },
+  {
+    title: "Artist Objects",
+    description: "작가 콜라보 오브제/포스터/엽서를 함께 제공합니다.",
+  },
+  {
+    title: "Monthly Delivery",
+    description: "매월 지정 주간에 배송, 다음 회차에 화병 회수/세척 포함.",
+  },
+  {
+    title: "Home Gallery Guide",
+    description: "작은 전시처럼 연출하는 스타일링 가이드와 음악 추천.",
+  },
+] as const;
+
 export const steps = [
   {
     title: "테마 큐레이션",

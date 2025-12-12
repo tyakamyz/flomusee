@@ -8,8 +8,8 @@ export type FAQ = {
 export function FAQItem({ item }: { item: FAQ }) {
   return (
     <Card className="p-5">
-      <h3 className="text-base font-semibold">{item.question}</h3>
-      <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">{item.answer}</p>
+      <h3 className="text-base font-semibold text-text-main">{item.question}</h3>
+      <p className="mt-3 text-sm leading-6 text-text-muted">{item.answer}</p>
     </Card>
   );
 }

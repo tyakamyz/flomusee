@@ -20,13 +20,13 @@ type ButtonProps =
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-black text-white hover:bg-zinc-800 focus-visible:outline-black dark:bg-white dark:text-black dark:hover:bg-zinc-200",
+    "bg-primary text-white hover:bg-primary-dark focus-visible:outline-primary",
   secondary:
-    "bg-zinc-100 text-black hover:bg-zinc-200 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800",
+    "bg-primary-soft text-primary hover:bg-primary/10 focus-visible:outline-primary",
   outline:
-    "border border-black text-black hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black",
+    "border border-border-strong text-text-main hover:border-primary hover:text-primary focus-visible:outline-primary",
   ghost:
-    "text-black hover:bg-zinc-100 dark:text-white dark:hover:bg-zinc-900",
+    "text-text-muted hover:bg-primary-soft hover:text-primary focus-visible:outline-primary",
 };
 
 export function Button(props: ButtonProps) {
