@@ -3,13 +3,30 @@
 ## 프로젝트 구조
 - Next.js App Router는 `src/app`에 위치하며, 공통 레이아웃은 `layout.tsx`, 기본 랜딩은 `page.tsx`이다. 신규 라우트는 `src/app/<route>/page.tsx` 형태로 추가한다. 현재 준비된 페이지: `/`, `/about`, `/artists`, `/subscribe`, `/contact`.
 - 전역 스타일은 `src/app/globals.css`, 정적 자원은 `public/`에 둔다.
-- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero/Intro/Flow/Plan/Artist/FAQ 섹션, `FlomuseeLandingPage` 포함), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의한다.
+- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero/Intro/Flow/Plan/Artist/FAQ 섹션, `FlomuseeLandingPage`, `FlomuseePricing`), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의한다.
 - 빌드·실행 설정은 `next.config.ts`, 타입 설정은 `tsconfig.json`, 린트 규칙은 `eslint.config.mjs`에 정의되어 있다. `.next/` 등 생성 산출물은 커밋하지 않는다.
 
 ## 랜딩 카피/컴포넌트 가이드
 - 브랜드 카피는 한글 기준으로 고정한다(예: Hero 헤드라인 “집 안에 열리는 작은 미술관, 플로뮤제”). FAQ/서비스 소개/플로우/아티스트 섹션 카피는 의도적으로 줄바꿈을 포함하므로 `whitespace-pre-line` 등의 Tailwind 클래스로 처리한다.
 - 단일 페이지 구성 시 `FlomuseeLandingPage` 같은 컴포넌트를 만들어 Hero → Service Intro → Subscription Flow → Artist & Theme → FAQ 순으로 배치하고, 컨테이너는 `max-w-6xl mx-auto px-4 py-16`을 기본으로 사용한다. Primary 버튼은 `bg-[#1f3a32] text-white rounded-full hover:bg-[#13261f]` 톤을 유지한다.
 - `FlomuseeLandingPage` 구현 위치: `src/components/home/FlomuseeLandingPage.tsx`. 섹션별 카피는 요구사항에 맞춰 하드코딩되어 있으며, 이미지 자리는 placeholder(`'/images/hero-placeholder.jpg'`, `'/images/artist-placeholder.jpg'`)로 처리했다.
+- `FlomuseePricing` 구현 위치: `src/components/home/FlomuseePricing.tsx`. 대비 개선을 위해 버튼/배지/텍스트 색을 진하게 조정했고, WCAG AA에 맞는 대비(딥그린+화이트, 민트+딥그린, 코랄+화이트)를 사용한다.
+
+## Tailwind 색상 토큰 제안
+`theme.extend.colors` 예시:
+```js
+colors: {
+  primary: "#234033",
+  primaryDark: "#1A332B",
+  primarySoft: "#D7E4DC",
+  accentCoral: "#F28D8D",
+  bgPage: "#F5EFE6",
+  bgCard: "#FFFFFF",
+  textMain: "#1F2933",
+  textMuted: "#6B7280",
+  textSubtle: "#9CA3AF",
+},
+```
 
 ## 빌드·테스트·개발 명령
 - `npm install`로 의존성을 동기화한다(`package-lock.json`을 사용하므로 npm 권장).
@@ -63,3 +80,4 @@
 - 추가 섹션: Blog/스토리, 콜라보/프레스 CTA, 고객 후기(있다면) 섹션을 설계 후 라우트 확장.
 - 랜딩 페이지 적용: `FlomuseeLandingPage`를 라우트(`app/page.tsx` 등)에서 실제 렌더링하도록 연결하고, 공통 헤더/푸터와 톤을 맞춘다.
 - CTA 동선 확정: “첫 전시 구독 신청하기”, “플로뮤제 전시 미리보기” 링크 목적지(URL/앵커) 결정 후 버튼에 반영.
+- Tailwind 색상 토큰 반영: `theme.extend.colors`에 primary/bg/text/accent 토큰을 추가하고, 기존 스타일(`globals.css` @theme)과 정리하여 중복/불일치 없는지 확인. 토큰 적용 후 `FlomuseePricing` 및 공통 컴포넌트에서 임시 hex 백업 클래스를 제거한다.
