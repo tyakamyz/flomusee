@@ -64,7 +64,7 @@ export default function FlomuseePricing() {
                   className={`absolute right-4 top-4 rounded-full px-3 py-1 text-xs font-semibold ${
                     plan.badge.tone === "coral"
                       ? "bg-accentCoral bg-[#F28D8D] text-white" // 높인 대비: coral 배경 + white 텍스트
-                      : "bg-primarySoft bg-[#D7E4DC] text-primary text-[#234033]" // mint 배경 + deep green 텍스트
+                      : "bg-primarySoft bg-[#D7E4DC] text-primary text-white" // mint 배경 + 딥그린 배경 대비 흰색계열로 조정
                   }`}
                 >
                   {plan.badge.label}
@@ -83,7 +83,7 @@ export default function FlomuseePricing() {
               <ul className="flex flex-col gap-3 text-sm text-textMain text-[#1F2933]">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-primary bg-[#234033]" />
+                    <span className="mt-1 h-2 w-2 rounded-full bg-primary bg-[#1f3a32]" />
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -93,8 +93,8 @@ export default function FlomuseePricing() {
                 <button
                   className={`w-full rounded-full px-4 py-3 text-sm font-semibold transition-colors ${
                     plan.buttonVariant === "solid"
-                      ? "bg-primary bg-[#234033] text-white hover:bg-primaryDark hover:bg-[#1A332B]" // 대비 개선: deep green + white
-                      : "bg-primarySoft bg-[#D7E4DC] text-primary text-[#234033] hover:bg-[#cddcd3]" // 대비 개선: mint + deep green
+                      ? "bg-primary bg-[#1f3a32] text-white hover:bg-primaryDark hover:bg-[#162d26]" // 대비 개선: deep green + white
+                      : "bg-primarySoft bg-[#D7E4DC] text-white hover:bg-[#cddcd3]" // 대비 개선: soft green + white (딥그린 대신 흰색계열로 가독성 확보)
                   }`}
                 >
                   플랜 상세 보기
@@ -110,7 +110,7 @@ export default function FlomuseePricing() {
           </span>
           <a
             href="/contact"
-            className="rounded-full border border-primary border-[#234033] px-4 py-2 text-sm font-semibold text-primary text-[#234033] hover:bg-[#234033] hover:text-white"
+            className="rounded-full border border-primary border-[#1f3a32] px-4 py-2 text-sm font-semibold text-primary text-[#1f3a32] hover:bg-[#1f3a32] hover:text-white"
           >
             상담 문의하기
           </a>

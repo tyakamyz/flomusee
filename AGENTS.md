@@ -11,13 +11,14 @@
 - 단일 페이지 구성 시 `FlomuseeLandingPage` 같은 컴포넌트를 만들어 Hero → Service Intro → Subscription Flow → Artist & Theme → FAQ 순으로 배치하고, 컨테이너는 `max-w-6xl mx-auto px-4 py-16`을 기본으로 사용한다. Primary 버튼은 `bg-[#1f3a32] text-white rounded-full hover:bg-[#13261f]` 톤을 유지한다.
 - `FlomuseeLandingPage` 구현 위치: `src/components/home/FlomuseeLandingPage.tsx`. 섹션별 카피는 요구사항에 맞춰 하드코딩되어 있으며, 이미지 자리는 placeholder(`'/images/hero-placeholder.jpg'`, `'/images/artist-placeholder.jpg'`)로 처리했다.
 - `FlomuseePricing` 구현 위치: `src/components/home/FlomuseePricing.tsx`. 대비 개선을 위해 버튼/배지/텍스트 색을 진하게 조정했고, WCAG AA에 맞는 대비(딥그린+화이트, 민트+딥그린, 코랄+화이트)를 사용한다.
+- Primary 배경(#1f3a32) 위 텍스트는 흰색 계열(`textOnPrimary` 혹은 `text-white`)을 사용해 가독성을 확보한다. Soft green 배경(#D7E4DC)에서는 딥그린보다 흰색이 더 선명해 이를 적용했다.
 
 ## Tailwind 색상 토큰 제안
 `theme.extend.colors` 예시:
 ```js
 colors: {
-  primary: "#234033",
-  primaryDark: "#1A332B",
+  primary: "#1f3a32",
+  primaryDark: "#162d26",
   primarySoft: "#D7E4DC",
   accentCoral: "#F28D8D",
   bgPage: "#F5EFE6",
@@ -25,6 +26,7 @@ colors: {
   textMain: "#1F2933",
   textMuted: "#6B7280",
   textSubtle: "#9CA3AF",
+  textOnPrimary: "#FFFFFF",
 },
 ```
 
