@@ -73,7 +73,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+      className="flex flex-col gap-4 rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary"
     >
       <div className="flex flex-col gap-2">
         <label className="text-sm font-semibold text-primary-dark dark:text-zinc-100">
@@ -83,7 +83,7 @@ export function ContactForm() {
           type="text"
           value={form.name}
           onChange={(e) => handleChange("name", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
           placeholder="홍길동"
         />
       </div>
@@ -95,7 +95,7 @@ export function ContactForm() {
           type="email"
           value={form.email}
           onChange={(e) => handleChange("email", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
           placeholder="you@example.com"
         />
       </div>
@@ -106,7 +106,7 @@ export function ContactForm() {
         <select
           value={form.topic}
           onChange={(e) => handleChange("topic", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
         >
           <option>구독 상담</option>
           <option>작가/브랜드 콜라보</option>
@@ -121,7 +121,7 @@ export function ContactForm() {
         <textarea
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className="min-h-[140px] rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-zinc-950 dark:text-white dark:focus:ring-white/20"
+          className="min-h-[140px] rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
           placeholder="배송 일정, 콜라보 제안, 기타 문의를 남겨주세요."
         />
       </div>

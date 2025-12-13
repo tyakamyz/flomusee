@@ -9,7 +9,7 @@ export default function AboutPage() {
         subtitle="꽃과 예술을 하나의 전시처럼 경험할 수 있도록, 지속 가능한 순환형 구독을 만듭니다."
       />
       <div className="grid gap-6 lg:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary">
           <h3 className="text-lg font-semibold text-white">브랜드 미션</h3>
           <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
             일상의 공간이 갤러리가 되도록, 계절의 꽃과 작가들의 작품을 함께
@@ -17,7 +17,7 @@ export default function AboutPage() {
             관리 부담을 줄입니다.
           </p>
         </div>
-        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary">
           <h3 className="text-lg font-semibold text-white">이름의 의미</h3>
           <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
             FLO(ral) + MUSÉE(뮤지엄)의 합성어로, 꽃과 작품을 전시하듯 경험하는
@@ -25,7 +25,7 @@ export default function AboutPage() {
             큐레이션합니다.
           </p>
         </div>
-        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary">
           <h3 className="text-lg font-semibold text-white">지속 가능성</h3>
           <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
             화병 재사용, 친환경 포장재, 지역 플로리스트 협업을 통해 탄소
@@ -33,7 +33,7 @@ export default function AboutPage() {
             재활용합니다.
           </p>
         </div>
-        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary">
           <h3 className="text-lg font-semibold text-white">팀</h3>
           <p className="mt-3 text-sm text-zinc-600 dark:text-zinc-300">
             플로리스트, 그래픽 디자이너, 테크 멤버가 함께 운영합니다. 고객
