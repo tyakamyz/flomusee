@@ -4,6 +4,9 @@ import { Button } from "@/components/common/Button";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/config/site";
 
+const contactButtonClass =
+  "mt-4 w-fit rounded-full border border-primary bg-primary text-white transition-colors hover:bg-primary-dark hover:text-white focus-visible:outline-primary dark:border-white dark:bg-primary dark:text-white dark:hover:bg-primary-dark dark:hover:text-white";
+
 export default function ContactPage() {
   return (
     <Section>
@@ -33,8 +36,8 @@ export default function ContactPage() {
             <Button
               as="a"
               href={siteConfig.kakaoUrl}
-              variant="secondary"
-              className="mt-4 w-fit"
+              variant="outline"
+              className={contactButtonClass}
             >
               Kakao 채널 이동
             </Button>
@@ -47,8 +50,8 @@ export default function ContactPage() {
             <Button
               as="a"
               href={siteConfig.instagramUrl}
-              variant="ghost"
-              className="mt-4 w-fit"
+              variant="outline"
+              className={contactButtonClass}
             >
               Instagram 열기
             </Button>
