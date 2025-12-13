@@ -17,7 +17,7 @@ export default function ContactPage() {
         </div>
         <div className="flex flex-col gap-4">
           <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h3 className="text-lg font-semibold">이메일</h3>
+            <h3 className="text-lg font-semibold text-white">이메일</h3>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
               {siteConfig.contactEmail} (가상의 주소입니다)
             </p>
@@ -26,7 +26,7 @@ export default function ContactPage() {
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h3 className="text-lg font-semibold">카카오 채널</h3>
+            <h3 className="text-lg font-semibold text-white">카카오 채널</h3>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
               실시간 상담 및 배송 스케줄 문의를 빠르게 도와드립니다.
             </p>
@@ -40,7 +40,7 @@ export default function ContactPage() {
             </Button>
           </div>
           <div className="rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <h3 className="text-lg font-semibold">인스타그램 DM</h3>
+            <h3 className="text-lg font-semibold text-white">인스타그램 DM</h3>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
               최신 전시 소식과 플라워 스타일을 확인하고 DM으로 문의할 수 있습니다.
             </p>
