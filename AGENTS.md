@@ -84,3 +84,7 @@ colors: {
 - 랜딩 페이지 적용: `FlomuseeLandingPage`를 라우트(`app/page.tsx` 등)에서 실제 렌더링하도록 연결하고, 공통 헤더/푸터와 톤을 맞춘다.
 - CTA 동선 확정: “첫 전시 구독 신청하기”, “플로뮤제 전시 미리보기” 링크 목적지(URL/앵커) 결정 후 버튼에 반영.
 - Tailwind 색상 토큰 반영: `theme.extend.colors`에 primary/bg/text/accent 토큰을 추가하고, 기존 스타일(`globals.css` @theme)과 정리하여 중복/불일치 없는지 확인. 토큰 적용 후 `FlomuseePricing` 및 공통 컴포넌트에서 임시 hex 백업 클래스를 제거한다.
+
+## Git 커밋 규칙 추가
+- 커밋 요청 시 Google Java Style Guide의 커밋 컨벤션을 따르며, 기능 단위로 나눠 개별 커밋을 만든다.
+- 커밋 메시지는 모두 한글로 작성한다.
