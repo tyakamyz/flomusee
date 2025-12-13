@@ -46,6 +46,16 @@ a {
   text-decoration: none;
 }
 
+/* Ensure dark-toned buttons/links keep white text for contrast */
+a.bg-primary,
+a.bg-primary-dark,
+a[class*="bg-[#1f3a32]"],
+button.bg-primary,
+button.bg-primary-dark,
+button[class*="bg-[#1f3a32]"] {
+  color: var(--color-white);
+}
+
 ::selection {
   background: var(--color-primary-soft);
   color: var(--color-primary-dark);
