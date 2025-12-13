@@ -48,6 +48,11 @@ colors: {
 - 폰트: 헤딩 `var(--font-playfair)`(Playfair Display, next/font/google), 바디 `var(--font-body)`(Pretendard/SUIT/Geist). 전역 클래스 `.text-h1~4`, `.text-body`, `.text-caption` 활용.
 - 컴포넌트 스타일: Button(Primary/Secondary/Outline/Ghost) 모두 브랜드 컬러 적용, Card는 라운드 2xl + 섀도우, Section variant(default/muted/dark)로 배경 톤 제어.
 
+## 최근 스타일 정리
+- 기본 텍스트 컬러는 `text-primary-dark`(#13261f) 사용. 다크 모드나 진한 배경은 `bg-primary`(#1f3a32)로 통일.
+- 진한 배경/버튼(특히 primary 계열) 위 텍스트는 `text-white`를 강제해 대비 확보(`globals.css` 오버라이드 포함).
+- Contact 페이지 CTA는 전용 클래스(라운드, `bg-primary text-white`, hover 시 `bg-primary-dark`)를 유지해 카드 배경과 명확히 대비되도록 한다.
+
 ## 랜딩 섹션 구성
 - `HeroSection`: 브랜드 카피, CTA 2개, 오른쪽 구독 박스 카드.
 - `ServiceIntroSection`: 4개 특징 카드(꽃, 오브제, 월 배송, 스타일링 가이드).
