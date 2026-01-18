@@ -1,39 +1,32 @@
 "use client";
 
 import Link from "next/link";
-import type { MouseEvent } from "react";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-  { id: "about", label: "About" },
-  { id: "plans", label: "Plans" },
-  { id: "artists", label: "Artists" },
-  { id: "faq", label: "FAQ" },
-  { id: "contact", label: "Contact" },
+  { href: "/", label: "Home" },
+  { href: "/subscribe", label: "Subscribe" },
+  { href: "/artists", label: "Artists" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ] as const;
 
-type NavLinksProps = {
-  activeSection: string;
-  onNavClick: (event: MouseEvent<HTMLAnchorElement>, id: string) => void;
-  mobile?: boolean;
-};
-
-function NavLinks({ activeSection, onNavClick, mobile = false }: NavLinksProps) {
+function NavLinks({ activePath, mobile = false }: { activePath: string; mobile?: boolean }) {
   return (
     <nav className={`flex ${mobile ? "flex-col gap-2" : "items-center gap-6"} text-sm font-medium text-text-muted`}>
       {navItems.map((item) => {
-        const isActive = activeSection === item.id;
+        const isActive = activePath === item.href;
         return (
-          <a
-            key={item.id}
-            href={`/#${item.id}`}
-            onClick={(event) => onNavClick(event, item.id)}
+          <Link
+            key={item.href}
+            href={item.href}
             className={`rounded-full px-3 py-2 transition-colors ${
               isActive ? "bg-primary-soft text-primary" : "hover:text-text-main"
             }`}
           >
             {item.label}
-          </a>
+          </Link>
         );
       })}
     </nav>
@@ -41,34 +34,10 @@ function NavLinks({ activeSection, onNavClick, mobile = false }: NavLinksProps) 
 }
 
 export function Header() {
-  const [activeSection, setActiveSection] = useState<string>("about");
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
-
-  const scrollToHash = useCallback((hash: string) => {
-    const targetId = hash.replace("#", "");
-    if (!targetId) return;
-    const element = document.getElementById(targetId);
-    if (element) {
-      const reduceMotion =
-        typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      element.scrollIntoView({
-        behavior: reduceMotion ? "auto" : "smooth",
-        block: "start",
-      });
-    }
-  }, []);
-
-  const handleNavClick = (event: MouseEvent<HTMLAnchorElement>, id: string) => {
-    event.preventDefault();
-    setMenuOpen(false);
-    const hash = `#${id}`;
-    if (window.location.hash !== hash) {
-      window.history.pushState(null, "", hash);
-    }
-    scrollToHash(hash);
-  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -77,36 +46,7 @@ export function Header() {
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, [scrollToHash]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.45, rootMargin: "-15% 0px -35% 0px" },
-    );
-
-    navItems.forEach((item) => {
-      const section = document.getElementById(item.id);
-      if (section) observer.observe(section);
-    });
-
-    return () => observer.disconnect();
   }, []);
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      scrollToHash(window.location.hash);
-    };
-    handleHashChange();
-    window.addEventListener("hashchange", handleHashChange);
-    return () => window.removeEventListener("hashchange", handleHashChange);
-  }, [scrollToHash]);
 
   useEffect(() => {
     if (!menuOpen) return undefined;
@@ -161,10 +101,9 @@ export function Header() {
           </span>
         </Link>
         <div className="hidden items-center gap-6 sm:flex">
-          <NavLinks activeSection={activeSection} onNavClick={handleNavClick} />
+          <NavLinks activePath={pathname} />
           <Link
-            href="/#plans"
-            onClick={(event) => handleNavClick(event, "plans")}
+            href="/subscribe"
             className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white shadow-[0_10px_30px_rgba(31,58,50,0.16)] transition-all hover:-translate-y-[1px] hover:bg-primary-dark"
           >
             구독 플랜 보기
@@ -192,11 +131,10 @@ export function Header() {
             aria-modal="true"
             className="border-t border-border-subtle bg-bg-base/95 px-5 py-4 shadow-xl backdrop-blur"
           >
-            <NavLinks activeSection={activeSection} onNavClick={handleNavClick} mobile />
+            <NavLinks activePath={pathname} mobile />
             <div className="mt-3">
               <Link
-                href="/#plans"
-                onClick={(event) => handleNavClick(event, "plans")}
+                href="/subscribe"
                 className="inline-flex w-full items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(31,58,50,0.16)] transition-colors hover:bg-primary-dark"
               >
                 구독 플랜 보기

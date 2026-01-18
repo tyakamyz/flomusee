@@ -3,6 +3,7 @@ import { Button } from "@/components/common/Button";
 import { Card } from "@/components/common/Card";
 
 export type Plan = {
+  slug?: string;
   name: string;
   price: string;
   cycle: string;
@@ -10,6 +11,7 @@ export type Plan = {
   highlight?: boolean;
   tag?: string;
   tagline?: string;
+  priceNote?: string;
   note?: string;
 };
 
@@ -21,7 +23,7 @@ type PlanCardProps = {
 
 export function PlanCard({
   plan,
-  ctaHref = "/#contact",
+  ctaHref = plan.slug ? `/subscribe/${plan.slug}` : "/#contact",
   ctaLabel = "상담 요청하기",
 }: PlanCardProps) {
   return (

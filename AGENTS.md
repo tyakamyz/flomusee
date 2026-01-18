@@ -1,22 +1,21 @@
 # Repository Guidelines
 
 ## 프로젝트 구조
-- Next.js App Router는 `src/app`에 위치하며, 공통 레이아웃은 `layout.tsx`, 기본 랜딩은 `page.tsx`이다. 신규 라우트는 `src/app/<route>/page.tsx` 형태로 추가한다. 현재 준비된 페이지: `/`, `/about`, `/artists`, `/subscribe`, `/contact`.
+- Next.js App Router는 `src/app`에 위치하며, 공통 레이아웃은 `layout.tsx`, 기본 랜딩은 `page.tsx`이다. 신규 라우트는 `src/app/<route>/page.tsx` 형태로 추가한다. 현재 준비된 페이지: `/`, `/about`, `/artists`, `/artists/[slug]`, `/subscribe`, `/subscribe/[slug]`, `/contact`.
 - 전역 스타일은 `src/app/globals.css`, 정적 자원은 `public/`에 둔다. `globals.css`에서 배경 그라데이션·노이즈 오버레이, 타이포 스케일, 스크롤 행동(감소 모션 존중)을 정의한다.
-- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero/Intro/Flow/Plan/Artist/FAQ/Story/Contact 섹션, `FlomuseeLandingPage`, `FlomuseePricing`), `src/components/contact`(ContactForm) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의하며 heroHighlights, storyPoints, steps, plans, artists, faqs를 포함한다.
+- 재사용 컴포넌트는 `src/components/common`(Button, Section, SectionTitle, Card, Badge, Reveal, PlaceholderImage), `src/components/layout`(Header, Footer, MainLayout), `src/components/domain`(PlanCard, ArtistCard, FAQItem), `src/components/home`(Hero, ProductStory, Lookbook, Included, HowItWorks, PlanTeaser, ArtistHighlight, FAQ, TrustPolicy, Contact), `src/components/contact`(ContactForm), `src/components/subscribe`(PlanProgressBar) 아래에 있다. 기본 데이터 샘플은 `src/data/site.ts`에 정의하며 heroHighlights, productStory, lookbookImages, includedItems, steps, trustPolicies, planDetails/plans, artistDetails/artists, faqs를 포함한다.
 - 빌드·실행 설정은 `next.config.ts`, 타입 설정은 `tsconfig.json`, 린트 규칙은 `eslint.config.mjs`에 정의되어 있다. `.next/` 등 생성 산출물은 커밋하지 않는다.
 
-## SPA 내비게이션
-- 헤더는 앵커 내비게이션(About/Artists/Plans/FAQ/Contact)을 제공하며, IntersectionObserver로 활성 섹션을 표시한다. 스크롤 시 투명→서피스 배경으로 전환되고 모바일 드로어(포커스 트랩, ESC 닫기)를 포함한다.
-- 부드러운 스크롤은 `prefers-reduced-motion`을 존중한다. 해시(#about 등)로 진입 시 자동 스크롤된다.
-- `/about`, `/artists`, `/subscribe`, `/contact` 라우트는 클라이언트에서 `/#섹션`으로 리디렉션하는 얇은 페이지로 유지한다(SEO/공유 대비).
-- 섹션 id: `about`, `artists`, `plans`, `faq`, `contact`(필수). 상단 CTA: “구독 플랜 보기” → #plans, “플로뮤제 전시 미리보기” → #artists.
+## 내비게이션/페이지
+- 헤더 메뉴는 `/`, `/subscribe`, `/artists`, `/about`, `/contact`를 가리키며, 스크롤 시 투명→서피스 배경 전환과 모바일 드로어(포커스 트랩, ESC) 기능을 갖춘다.
+- 메인 페이지 내부 앵커는 보조 수단이며, 상세 정보는 개별 페이지/동적 라우트(`/subscribe/[slug]`, `/artists/[slug]`)에서 제공한다.
+- 부드러운 스크롤/애니메이션은 `prefers-reduced-motion`을 존중한다. IntersectionObserver 기반 리빌(Reveal) 유틸을 사용한다.
 
 ## 랜딩 카피/컴포넌트 가이드
 - 브랜드 카피는 한글 기준으로 고정한다(예: Hero 헤드라인 “집 안에 열리는 작은 미술관, 플로뮤제”). 줄바꿈 포함 카피는 `whitespace-pre-line` 등으로 처리한다.
-- 단일 스크롤 랜딩 기본 구성: Hero → Service Intro(#about) → Flow → Plans(#plans) → Artists(#artists) → Story → FAQ(#faq) → Contact(#contact)/Footer. 컨테이너는 `max-w-6xl mx-auto px-4(5)/py-16` 기준을 유지한다.
-- Hero 오른쪽 “구독 박스 카드”는 유리감·보더·통계를 포함한 카드로 구성한다. CTA는 #plans, #artists 앵커를 사용한다.
-- `FlomuseeLandingPage`는 레거시 데모용으로 남겨 두었고, 실제 랜딩은 `src/app/page.tsx`에 섹션별 서버 컴포넌트로 배치한다. `FlomuseePricing` 대비 가이드는 참고용으로 유지한다.
+- 메인 페이지는 “상품 설명 중심” 구성: Hero → Product Story → Lookbook → What’s inside → How it works → Plans Teaser → Trust/Policy → Artist Preview → FAQ → Contact. 컨테이너는 `max-w-6xl mx-auto px-4(5)/py-16` 기준을 유지한다.
+- Hero 오른쪽 “구독 박스 카드”는 유리감·보더·통계를 포함한 카드로 구성한다. CTA는 /subscribe 및 /subscribe/premium.
+- `FlomuseeLandingPage`는 레거시 데모용으로 남겨 두었고, 실제 랜딩은 `src/app/page.tsx`의 섹션 컴포넌트(ProductStory/Lookbook/Included/PlanTeaser 등)를 사용한다. `FlomuseePricing` 대비 가이드는 참고용으로 유지한다.
 - Primary 배경(#1f3a32) 위 텍스트는 `text-white`로 고정하고, Soft green 배경(#E7F0E8) 위에는 흰색/딥그린 대비를 사용한다. 버튼은 라운드-full, hover 시 subtle lift/색 변화가 적용된다.
 
 ## Tailwind 색상 토큰 제안
@@ -61,14 +60,15 @@ colors: {
 - 헤더: 투명/블러 시작 → 스크롤 시 서피스 배경. IntersectionObserver로 활성 메뉴 하이라이트.
 
 ## 랜딩 섹션 구성
-- `HeroSection`: 브랜드 카피, CTA 2개(#plans/#artists), 오른쪽 구독 박스 카드(가격/배송/회수 정보).
-- `ServiceIntroSection`(id=about): 4개 특징 카드(꽃, 오브제, 스타일링, 지속 가능성).
+- `HeroSection`: 브랜드 카피, CTA 2개(/subscribe, /subscribe/premium), 오른쪽 구독 박스 카드(가격/배송/회수 정보).
+- `ProductStorySection`: heroHighlights + productStory 카드로 “왜 이 구독인가” 설명.
+- `LookbookSection`: lookbook 이미지(placeholder) 그리드, 캡션 포함.
+- `IncludedSection`: 박스 구성 요소(꽃/오브제/향/화병/가이드/카드) 카드.
 - `HowItWorksSection`: 4스텝 플로우 카드(플레이스홀더 이미지 `public/images/flow-1~4.svg` 사용).
-- `PlanSection`(id=plans): `PlanCard` 3종(Standard/Premium/Gift, 추천 뱃지/노트 포함).
-- `ArtistHighlightSection`(id=artists): 작가 카드 3종(이미지 플레이스홀더 `public/images/artist-*.svg`).
-- `StorySection`: 브랜드 스토리·지속가능·콜렉터블 3컬럼 요약.
-- `FAQSection`(id=faq): 아코디언 FAQ 카드.
-- `ContactSection`(id=contact): ContactForm + 채널 CTA 카드.
+- `PlanTeaserSection`: `PlanCard` 3종(Standard/Premium/Gift, 추천 뱃지/노트 포함).
+- `ArtistHighlightSection`: 작가 카드 3종(이미지 플레이스홀더 `public/images/placeholders/artist.svg`).
+- `TrustPolicySection`: 회수/세척, 파손/분실, 시듦 보상, 스킵/해지 정책 카드.
+- `FAQSection`: 아코디언 FAQ 카드. `ContactSection`: ContactForm + 채널 CTA 카드.
 
 ## 테스트 가이드
 - 현재 공식 테스트 스위트는 없다. 추가 시 컴포넌트는 React Testing Library, 핵심 플로우는 Playwright를 권장한다.
@@ -95,9 +95,9 @@ colors: {
 - 이미지 에셋 정리: `public/images/...` 구조로 샘플 박스/작가/포스터 이미지 추가, 카드에 실제 썸네일 바인딩.
 - 디자인 QA: 모바일/태블릿 레이아웃 검토, 섹션 간 여백/폰트 스케일 미세 조정.
 - 추가 섹션: Blog/스토리, 콜라보/프레스 CTA, 고객 후기(있다면) 섹션을 설계 후 라우트 확장.
-- 랜딩 페이지 적용: `/`에서 섹션을 렌더하는 SPA 구조 유지, 해시 앵커 동선을 점검한다.
-- CTA 동선 확정: “구독 플랜 보기”(#plans), “플로뮤제 전시 미리보기”(#artists) 후속 경로 결정.
-- Tailwind 색상 토큰 반영: `theme.extend.colors`에 primary/bg/text/accent 토큰을 추가하고, 기존 스타일(`globals.css` @theme)과 정리하여 중복/불일치 없는지 확인. 토큰 적용 후 `FlomuseePricing` 및 공통 컴포넌트에서 임시 hex 백업 클래스를 제거한다.
+- 멀티 페이지 전환 후 `/subscribe/[slug]`, `/artists/[slug]` 상세에 실제 이미지/카피 반영 필요.
+- CTA 동선 확정: “플랜 자세히 보기”(Subscribe), “프리미엄 플랜 살펴보기”(Premium 상세), 작가 상세→플랜 연결.
+- Tailwind 색상 토큰 반영: `theme.extend.colors`에 primary/bg/text/accent 토큰을 추가하고, 기존 스타일(`globals.css` @theme)과 정리하여 중복/불일치 없는지 확인.
 
 ## Git 커밋 규칙 추가
 - 커밋 요청 시 Google Java Style Guide의 커밋 컨벤션을 따르며, 기능 단위로 나눠 개별 커밋을 만든다.

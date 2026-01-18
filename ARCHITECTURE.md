@@ -63,16 +63,20 @@
 ### 3.2 주요 URL 설계 (1단계 기준)
 
 - `/`  
-  - 메인 SPA 랜딩 페이지  
-  - 히어로 섹션 + 서비스 요약 + 플로우 + 플랜 + 아티스트 + 스토리 + FAQ + Contact
+  - 메인 상품 설명 페이지  
+  - Hero + Product Story + Lookbook + 구성(What’s inside) + How it works + Plans Teaser + Trust/Policy + Artist Preview + FAQ + Contact
 - `/about`  
-  - 현재는 클라이언트에서 `/#about`으로 리디렉션하여 단일 페이지 경험을 유지(SEO/공유 대비)
+  - 브랜드 철학/지속가능/프로세스 소개 페이지
 - `/artists`  
-  - 현재는 `/#artists`로 리디렉션(딥링크 유지)
+  - 협업 작가 리스트 및 테마 소개
+- `/artists/[slug]`  
+  - 작가 상세(소개, 갤러리, 테마 노트, 관련 플랜)
 - `/subscribe`  
-  - 현재는 `/#plans`로 리디렉션(딥링크 유지)
-- `/contact` (옵션)  
-  - 현재는 `/#contact`로 리디렉션(딥링크 유지)
+  - 플랜 비교/선택 페이지
+- `/subscribe/[slug]`  
+  - 플랜 상세(이미지 기반, 포함 구성, 추천 대상, 배송/케어, 정책, FAQ, 관련 플랜)
+- `/contact`  
+  - 문의/콜라보 제안 안내 및 폼
 - `/blog` (향후 추가)  
   - 브랜드 스토리, 작가 인터뷰, 에세이 리스트
 - `/blog/[slug]`  
@@ -155,63 +159,38 @@
 
 ## 5. 페이지별 정보 구조
 
-### 5.1 `/` (메인 랜딩)
+### 5.1 `/` (메인 상품 페이지)
 
-- **HeroSection**
-  - 메인 카피: FLOMUSÉE 정체성을 한 줄로 표현(“집 안에 열리는 작은 미술관, 플로뮤제”)
-  - 서브 카피: “꽃과 예술이 만나는 구독 뮤지엄” 등
-  - 주요 CTA 버튼: “구독 플랜 보기”(#plans), “플로뮤제 전시 미리보기”(#artists)
-  - 우측 박스 카드: 월 구독 가격/배송/회수 정보를 담은 글래스 카드 + 플레이스홀더 이미지(`public/images/hero-ambient.svg`)
-- **HowItWorksSection**
-  - 서비스 이용 흐름 (예시 4단계):
-    1. 테마/작가 큐레이션
-    2. 플라워 & 아트 요소 구성
-    3. 배송 및 화병 회수/세척
-    4. 다음 작품/꽃으로 교체
-- **PlanSection**
-  - 대표 구독 플랜 카드 (예: Standard / Premium / Gift)
-  - 각 카드에 주요 정보:
-    - 가격
-    - 배송 주기
-    - 포함 요소
-    - 추천 대상/노트
-- **ArtistHighlightSection**
-  - 대표 작가 1~3명 소개
-  - 썸네일 이미지(placeholder `public/images/artist-*.svg`), 한 줄 설명, `/artists` 링크
-- **StorySection**
-  - 브랜드 스토리/지속가능성/컬렉터블 가치를 3컬럼으로 요약
-- **FAQSection**
-  - 자주 묻는 질문 요약(아코디언)
-- **ContactSection**
-  - 문의/콜라보 CTA 카드 + `ContactForm`(문의 주제·내용 제출)
-- **FAQSection**
-  - 자주 묻는 질문 요약:
-    - 배송 요일/주기
-    - 시든 꽃 처리 방식
-    - 화병 파손/분실 정책
-    - 구독 변경/해지 방법
+- **Hero**: 브랜드 카피(“집 안에 열리는 작은 미술관, 플로뮤제”), CTA(/subscribe, /subscribe/premium), 가격/배송/회수 요약 카드
+- **Product Story**: 꽃+아트, 회수·세척, 큐레이션 포인트 카드
+- **Lookbook**: placeholder 이미지 그리드 + 캡션
+- **What’s inside**: 구성 요소 카드(꽃/오브제/향/화병/가이드/카드)
+- **How it works**: 4단계 플로우(플레이스홀더 이미지 `public/images/flow-1~4.svg`)
+- **Plans Teaser**: Standard/Premium/Gift 요약 카드 + 상세 링크
+- **Trust & Policy**: 회수/세척, 파손/분실, 시듦 보상, 스킵/해지
+- **Artist Preview**: 대표 작가 3인 + `/artists` 링크
+- **FAQ**: 아코디언
+- **Contact CTA**: ContactForm + 채널 버튼
 
 ### 5.2 `/subscribe`
 
-- 플랜별 상세 정보:
-  - 플랜 이름, 가격, 배송 주기, 구성 요소 리스트
-  - 각 플랜의 타깃 고객(예: 입문용, 선물용, 컬렉터용 등)
-- FAQ 확장 버전:
-  - 결제, 배송, 서비스 정책에 대한 상세 설명
-- 차후 결제 연동 시:
-  - 선택한 플랜 정보 → `/checkout`으로 넘길 수 있는 구조 고려
+- 플랜 비교/선택 페이지: PlanCard 3종 + 비교 테이블(구성/배송/특징 요약)
+- 각 플랜 CTA: `/subscribe/[slug]`
 
-### 5.3 `/artists`
+### 5.3 `/subscribe/[slug]`
 
-- 작가 리스트:
-  - `ArtistCard` 반복 렌더링
-- 각 카드 정보:
-  - 작가 이름
-  - 포트폴리오 대표 이미지 혹은 아트워크 모티브
-  - 한 줄 소개
-  - (추후) `/artists/[id]` 상세 페이지로 확장 가능성을 고려한 구조
+- Sticky hero(가격/주기/CTA), 갤러리, 포함 구성, 추천 대상, 배송·케어, 정책, FAQ, 관련 플랜 카드
+- 진행바(스크롤 프로그레스)로 상세 진행 상황 표시
 
-### 5.4 `/blog` 및 `/blog/[slug]`
+### 5.4 `/artists`
+
+- 작가 리스트(썸네일, 테마, 태그라인) + `/artists/[slug]` 링크
+
+### 5.5 `/artists/[slug]`
+
+- 작가 소개, 갤러리, 테마 노트, 관련 플랜 링크
+
+### 5.6 `/blog` 및 `/blog/[slug]`
 
 - `/blog`
   - MDX 포스트 메타데이터 목록 렌더링 (제목, 요약, 태그, 작성일 등)
@@ -229,7 +208,7 @@
   - 페이지 전체 공통 래퍼
   - 예: `max-w-7xl`, `mx-auto`, `px-4`, `py-8`
 - `Header`
-  - 로고, 메인 내비게이션(`/`, `/about`, `/artists`, `/subscribe`, `/blog`)
+  - 로고, 메인 내비게이션(`/`, `/subscribe`, `/artists`, `/about`, `/contact`)
 - `Footer`
   - 저작권, SNS 링크, 간단한 소개 문구
 

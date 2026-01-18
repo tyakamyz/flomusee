@@ -1,21 +1,25 @@
 import { ArtistHighlightSection } from "@/components/home/ArtistHighlightSection";
+import { ContactSection } from "@/components/home/ContactSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { HowItWorksSection } from "@/components/home/HowItWorksSection";
-import { PlanSection } from "@/components/home/PlanSection";
-import { ServiceIntroSection } from "@/components/home/ServiceIntroSection";
-import { StorySection } from "@/components/home/StorySection";
-import { ContactSection } from "@/components/home/ContactSection";
+import { IncludedSection } from "@/components/home/IncludedSection";
+import { LookbookSection } from "@/components/home/LookbookSection";
+import { PlanTeaserSection } from "@/components/home/PlanTeaserSection";
+import { ProductStorySection } from "@/components/home/ProductStorySection";
+import { TrustPolicySection } from "@/components/home/TrustPolicySection";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <ServiceIntroSection />
+      <ProductStorySection />
+      <LookbookSection />
+      <IncludedSection />
       <HowItWorksSection />
-      <PlanSection />
+      <PlanTeaserSection />
+      <TrustPolicySection />
       <ArtistHighlightSection />
-      <StorySection />
       <FAQSection />
       <ContactSection />
     </>
