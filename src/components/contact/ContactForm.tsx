@@ -73,40 +73,40 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-4 rounded-2xl border border-zinc-100 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-primary"
+      className="flex flex-col gap-4 rounded-3xl border border-border-subtle bg-white/90 p-6 shadow-[0_14px_36px_rgba(20,30,25,0.08)] backdrop-blur"
     >
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-primary-dark dark:text-zinc-100">
+        <label className="text-sm font-semibold text-primary-dark">
           이름
         </label>
         <input
           type="text"
           value={form.name}
           onChange={(e) => handleChange("name", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-primary/30"
           placeholder="홍길동"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-primary-dark dark:text-zinc-100">
+        <label className="text-sm font-semibold text-primary-dark">
           이메일
         </label>
         <input
           type="email"
           value={form.email}
           onChange={(e) => handleChange("email", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-primary/30"
           placeholder="you@example.com"
         />
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-primary-dark dark:text-zinc-100">
+        <label className="text-sm font-semibold text-primary-dark">
           문의 주제
         </label>
         <select
           value={form.topic}
           onChange={(e) => handleChange("topic", e.target.value)}
-          className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
+          className="rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-primary/30"
         >
           <option>구독 상담</option>
           <option>작가/브랜드 콜라보</option>
@@ -115,13 +115,13 @@ export function ContactForm() {
         </select>
       </div>
       <div className="flex flex-col gap-2">
-        <label className="text-sm font-semibold text-primary-dark dark:text-zinc-100">
+        <label className="text-sm font-semibold text-primary-dark">
           문의 내용
         </label>
         <textarea
           value={form.message}
           onChange={(e) => handleChange("message", e.target.value)}
-          className="min-h-[140px] rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-black/10 dark:border-zinc-800 dark:bg-primary dark:text-white dark:focus:ring-white/20"
+          className="min-h-[140px] rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm text-primary-dark outline-none ring-2 ring-transparent transition focus:ring-primary/30"
           placeholder="배송 일정, 콜라보 제안, 기타 문의를 남겨주세요."
         />
       </div>
@@ -131,8 +131,9 @@ export function ContactForm() {
         <Button type="submit" className="w-full sm:w-fit" disabled={submitting}>
           {submitting ? "전송 중..." : "문의 제출"}
         </Button>
-        <p className="text-xs text-zinc-500 dark:text-zinc-400">
-          서버로 전송된 후 확인 이메일을 회신합니다. 추가 연락이 필요하면 {siteConfig.contactEmail} 로 직접 메일을 보내주세요.
+        <p className="text-xs text-text-muted">
+          서버로 전송된 후 확인 이메일을 회신합니다. 추가 연락이 필요하면 {siteConfig.contactEmail} 로 직접 메일을
+          보내주세요.
         </p>
       </div>
     </form>

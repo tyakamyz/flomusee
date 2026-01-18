@@ -20,18 +20,18 @@ type ButtonProps =
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-primary text-white hover:bg-primary-dark focus-visible:outline-primary",
+    "bg-primary text-white shadow-[0_12px_30px_rgba(31,58,50,0.16)] hover:-translate-y-[1px] hover:bg-primary-dark hover:shadow-[0_16px_36px_rgba(31,58,50,0.18)] focus-visible:ring-primary/70",
   secondary:
-    "bg-primary-soft text-primary hover:bg-primary/10 focus-visible:outline-primary",
+    "bg-primary-soft text-primary shadow-[0_10px_24px_rgba(31,58,50,0.08)] hover:-translate-y-[1px] hover:bg-white hover:text-primary-dark focus-visible:ring-primary/60",
   outline:
-    "border border-border-strong text-text-main hover:border-primary hover:text-primary focus-visible:outline-primary",
+    "border border-border-strong bg-white text-text-main hover:-translate-y-[1px] hover:border-primary hover:text-primary focus-visible:ring-primary/50",
   ghost:
-    "text-text-muted hover:bg-primary-soft hover:text-primary focus-visible:outline-primary",
+    "text-text-muted hover:-translate-y-[1px] hover:bg-primary-soft hover:text-primary focus-visible:ring-primary/40",
 };
 
 export function Button(props: ButtonProps) {
   const { children, variant = "primary", className = "", as, ...rest } = props;
-  const styles = `inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-colors ${variantStyles[variant]} ${className}`;
+  const styles = `inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base ${variantStyles[variant]} ${className}`;
 
   if (as === "a" && "href" in rest) {
     const { href, ...anchorProps } =

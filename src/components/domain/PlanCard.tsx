@@ -9,28 +9,43 @@ export type Plan = {
   features: string[];
   highlight?: boolean;
   tag?: string;
+  tagline?: string;
+  note?: string;
 };
 
 type PlanCardProps = {
   plan: Plan;
   ctaHref?: string;
+  ctaLabel?: string;
 };
 
-export function PlanCard({ plan, ctaHref = "/subscribe" }: PlanCardProps) {
+export function PlanCard({
+  plan,
+  ctaHref = "/#contact",
+  ctaLabel = "상담 요청하기",
+}: PlanCardProps) {
   return (
     <Card
-      className={`flex flex-col gap-6 p-6 ${
-        plan.highlight ? "border-primary shadow-[0_20px_40px_rgba(31,58,50,0.12)]" : ""
+      className={`flex flex-col gap-6 p-7 ${
+        plan.highlight
+          ? "border-primary shadow-[0_24px_48px_rgba(31,58,50,0.16)]"
+          : "shadow-[0_18px_40px_rgba(20,30,25,0.08)]"
       }`}
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col gap-2">
           <h3 className="text-h4">{plan.name}</h3>
           <p className="text-sm text-text-muted">{plan.cycle}</p>
+          {plan.tagline ? (
+            <p className="text-sm text-text-muted">{plan.tagline}</p>
+          ) : null}
         </div>
         {plan.tag ? <Badge label={plan.tag} variant={plan.highlight ? "accent" : "default"} /> : null}
       </div>
-      <div className="text-3xl font-bold text-text-main">{plan.price}</div>
+      <div className="flex items-baseline gap-2">
+        <div className="text-3xl font-bold text-text-main">{plan.price}</div>
+        <span className="text-sm text-text-muted">/ 배송</span>
+      </div>
       <ul className="flex flex-col gap-3 text-sm text-text-muted">
         {plan.features.map((feature) => (
           <li key={feature} className="flex items-start gap-2">
@@ -41,13 +56,9 @@ export function PlanCard({ plan, ctaHref = "/subscribe" }: PlanCardProps) {
       </ul>
       <div className="flex flex-col gap-3">
         <Button as="a" href={ctaHref} variant={plan.highlight ? "primary" : "secondary"} className="w-full">
-          플랜 상세 보기
+          {ctaLabel}
         </Button>
-        {plan.highlight ? (
-          <p className="text-xs text-text-muted">
-            추천 플랜: 프리미엄 꽃다발과 아티스트 에디션이 포함됩니다.
-          </p>
-        ) : null}
+        {plan.note ? <p className="text-xs text-text-muted">{plan.note}</p> : null}
       </div>
     </Card>
   );
