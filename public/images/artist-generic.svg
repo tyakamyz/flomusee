@@ -1,0 +1,13 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Artist placeholder">
+  <defs>
+    <linearGradient id="generic" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#E7F0E8" offset="0%"/>
+      <stop stop-color="#F3EEE6" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#generic)"/>
+  <rect x="120" y="60" width="240" height="200" rx="26" fill="#FFFFFF" stroke="#D1C8BB"/>
+  <circle cx="240" cy="160" r="82" fill="#1F3A32" opacity="0.12"/>
+  <circle cx="240" cy="140" r="52" fill="#E69A8D" opacity="0.32"/>
+  <text x="160" y="240" font-family="Georgia, 'Playfair Display', serif" font-size="20" fill="#1F3A32">Artist Preview</text>
+</svg>

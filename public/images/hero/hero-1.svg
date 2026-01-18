@@ -1,0 +1,14 @@
+<svg width="960" height="540" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hero placeholder">
+  <defs>
+    <linearGradient id="hh" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F8F3EC" offset="0%"/>
+      <stop stop-color="#E7F0E8" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" rx="42" fill="url(#hh)" stroke="#D1C8BB"/>
+  <circle cx="220" cy="170" r="150" fill="#E69A8D" opacity="0.2"/>
+  <circle cx="680" cy="120" r="180" fill="#1F3A32" opacity="0.12"/>
+  <rect x="200" y="200" width="560" height="200" rx="28" fill="#FFFFFF" opacity="0.78" stroke="#D1C8BB"/>
+  <text x="240" y="300" font-family="Georgia, 'Playfair Display', serif" font-size="32" fill="#1F3A32">FLOMUSÉE</text>
+  <text x="240" y="340" font-family="Arial, sans-serif" font-size="16" fill="#5B554F">Hero Placeholder</text>
+</svg>

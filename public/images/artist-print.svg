@@ -1,0 +1,14 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Print placeholder">
+  <defs>
+    <linearGradient id="print" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F3EEE6" offset="0%"/>
+      <stop stop-color="#FFFFFF" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#print)"/>
+  <rect x="120" y="40" width="240" height="240" rx="28" fill="white" stroke="#D1C8BB"/>
+  <rect x="150" y="70" width="180" height="180" rx="22" fill="#E7F0E8"/>
+  <path d="M170 220 C220 170 260 190 310 130" stroke="#1F3A32" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <circle cx="210" cy="140" r="22" fill="#E69A8D" opacity="0.8"/>
+  <text x="140" y="280" font-family="Arial, sans-serif" font-size="14" fill="#5B554F">Silkscreen Layers</text>
+</svg>

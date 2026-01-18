@@ -1,0 +1,18 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Textile art placeholder">
+  <defs>
+    <linearGradient id="textile" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F8F3EC" offset="0%"/>
+      <stop stop-color="#E7F0E8" offset="100%"/>
+    </linearGradient>
+    <pattern id="stitch" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 6 H12" stroke="#D1C8BB" stroke-width="1"/>
+      <path d="M6 0 V12" stroke="#D1C8BB" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="480" height="320" fill="url(#textile)"/>
+  <rect x="90" y="60" width="300" height="200" rx="28" fill="white" stroke="#D1C8BB"/>
+  <rect x="118" y="88" width="244" height="144" rx="20" fill="url(#stitch)"/>
+  <path d="M150 180 C200 130 260 230 330 140" stroke="#1F3A32" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <circle cx="200" cy="150" r="18" fill="#E69A8D" opacity="0.8"/>
+  <text x="130" y="270" font-family="Arial, sans-serif" font-size="14" fill="#5B554F">Pressed Florals on Textile</text>
+</svg>

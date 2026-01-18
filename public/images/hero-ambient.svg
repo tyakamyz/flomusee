@@ -1,0 +1,29 @@
+<svg width="960" height="600" viewBox="0 0 960 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">FLOMUSEE Hero Placeholder</title>
+  <desc id="desc">Soft gradient shapes representing flowers and gallery walls.</desc>
+  <defs>
+    <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F8F3EC" offset="0%"/>
+      <stop stop-color="#E7F0E8" offset="50%"/>
+      <stop stop-color="#F3EEE6" offset="100%"/>
+    </linearGradient>
+    <radialGradient id="g2" cx="25%" cy="25%" r="45%">
+      <stop stop-color="#E69A8D" stop-opacity="0.8" offset="0%"/>
+      <stop stop-color="#E69A8D" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+    <radialGradient id="g3" cx="80%" cy="0%" r="55%">
+      <stop stop-color="#1F3A32" stop-opacity="0.45" offset="0%"/>
+      <stop stop-color="#1F3A32" stop-opacity="0" offset="100%"/>
+    </radialGradient>
+  </defs>
+  <rect width="960" height="600" fill="url(#g1)"/>
+  <circle cx="180" cy="140" r="240" fill="url(#g2)"/>
+  <circle cx="760" cy="60" r="220" fill="url(#g3)"/>
+  <rect x="160" y="120" width="640" height="360" rx="38" fill="white" fill-opacity="0.72" stroke="#D1C8BB"/>
+  <circle cx="280" cy="240" r="90" fill="#E7F0E8" opacity="0.9"/>
+  <circle cx="520" cy="260" r="120" fill="#F3EEE6" opacity="0.9"/>
+  <circle cx="640" cy="340" r="70" fill="#E69A8D" opacity="0.45"/>
+  <rect x="340" y="340" width="260" height="70" rx="16" fill="#1F3A32" opacity="0.82"/>
+  <text x="360" y="382" font-family="Georgia, 'Playfair Display', serif" font-size="28" fill="#FFFFFF">FLOMUSÉE</text>
+  <text x="360" y="413" font-family="Arial, sans-serif" font-size="14" fill="#E7F0E8">Botanical Art Curation</text>
+</svg>

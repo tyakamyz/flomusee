@@ -1,0 +1,14 @@
+<svg width="480" height="300" viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow step placeholder">
+  <defs>
+    <linearGradient id="flow1-bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F8F3EC" offset="0%"/>
+      <stop stop-color="#E7F0E8" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="300" rx="28" fill="url(#flow1-bg)"/>
+  <circle cx="120" cy="120" r="90" fill="#1F3A32" opacity="0.12"/>
+  <circle cx="320" cy="180" r="110" fill="#E69A8D" opacity="0.16"/>
+  <rect x="96" y="82" width="288" height="140" rx="22" fill="white" stroke="#D1C8BB" opacity="0.92"/>
+  <text x="120" y="140" font-family="Georgia, 'Playfair Display', serif" font-size="22" fill="#1F3A32">Curation</text>
+  <text x="120" y="170" font-family="Arial, sans-serif" font-size="13" fill="#5B554F">Theme & Artist</text>
+</svg>

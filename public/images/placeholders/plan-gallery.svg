@@ -1,0 +1,13 @@
+<svg width="640" height="420" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan gallery placeholder">
+  <defs>
+    <linearGradient id="pg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#E7F0E8" offset="0%"/>
+      <stop stop-color="#F8F3EC" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="420" rx="28" fill="url(#pg)" stroke="#D1C8BB"/>
+  <circle cx="180" cy="160" r="120" fill="#1F3A32" opacity="0.12"/>
+  <circle cx="420" cy="260" r="140" fill="#E69A8D" opacity="0.16"/>
+  <text x="200" y="220" font-family="Georgia, 'Playfair Display', serif" font-size="22" fill="#1F3A32">Gallery</text>
+  <text x="200" y="250" font-family="Arial, sans-serif" font-size="14" fill="#5B554F">Placeholder</text>
+</svg>

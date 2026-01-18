@@ -1,0 +1,14 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ceramics placeholder">
+  <defs>
+    <linearGradient id="ceramics" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#F8F3EC" offset="0%"/>
+      <stop stop-color="#E7F0E8" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#ceramics)"/>
+  <circle cx="150" cy="170" r="70" fill="#1F3A32" opacity="0.14"/>
+  <rect x="210" y="90" width="120" height="160" rx="60" fill="#1F3A32" opacity="0.18"/>
+  <rect x="230" y="140" width="80" height="140" rx="40" fill="#FFFFFF" stroke="#D1C8BB"/>
+  <rect x="240" y="120" width="60" height="22" rx="11" fill="#E69A8D" opacity="0.6"/>
+  <text x="36" y="60" font-family="Georgia, 'Playfair Display', serif" font-size="26" fill="#1F3A32">Ceramic Forms</text>
+</svg>

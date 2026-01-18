@@ -1,0 +1,16 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scent art placeholder">
+  <defs>
+    <linearGradient id="scent" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop stop-color="#E7F0E8" offset="0%"/>
+      <stop stop-color="#F8F3EC" offset="100%"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="url(#scent)"/>
+  <circle cx="360" cy="120" r="80" fill="#E69A8D" opacity="0.12"/>
+  <rect x="180" y="70" width="120" height="190" rx="16" fill="#FFFFFF" stroke="#D1C8BB"/>
+  <rect x="200" y="50" width="80" height="40" rx="10" fill="#1F3A32" opacity="0.8"/>
+  <path d="M220 50 C190 10 240 10 210 50" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.8"/>
+  <path d="M260 50 C230 10 280 10 250 50" stroke="#FFFFFF" stroke-width="4" fill="none" opacity="0.8"/>
+  <rect x="206" y="120" width="68" height="90" rx="12" fill="#E7F0E8"/>
+  <text x="150" y="280" font-family="Georgia, 'Playfair Display', serif" font-size="18" fill="#1F3A32">Botanical Scent</text>
+</svg>
