@@ -6,8 +6,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "FLOMUSÉE | 문의하기",
-  description: "구독 문의, 배송 일정 조율, 작가/브랜드 콜라보 제안을 남겨주세요.",
+  title: "GALLERYNOOK | 문의하기",
+  description: "작가의 향 구독 문의, 배송 일정 조율, 작가/브랜드 콜라보 제안을 남겨주세요.",
 };
 
 export default function ContactPage() {
@@ -21,7 +21,7 @@ export default function ContactPage() {
       <div className="grid gap-6 lg:grid-cols-3">
         <Card className="p-5">
           <h3 className="text-h4">바로 연결</h3>
-          <p className="mt-2 text-sm text-text-muted">영업일 기준 24시간 내 회신합니다.</p>
+          <p className="mt-2 text-sm text-muted">영업일 기준 24시간 내 회신합니다.</p>
           <div className="mt-4 flex flex-col gap-2">
             <Button as="a" href={`mailto:${siteConfig.contactEmail}`} variant="primary" className="w-full">
               이메일 보내기
@@ -33,8 +33,8 @@ export default function ContactPage() {
               Instagram DM
             </Button>
           </div>
-          <p className="mt-3 text-xs text-text-muted">
-            기업/행사 플라워 큐레이션, 작가 콜라보, 배송 일정 조율 모두 이 채널로 접수합니다.
+          <p className="mt-3 text-xs text-muted">
+            기업/행사 큐레이션, 작가 콜라보, 배송 일정 조율 모두 이 채널로 접수합니다.
           </p>
         </Card>
         <div className="lg:col-span-2">

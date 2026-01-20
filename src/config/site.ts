@@ -1,5 +1,5 @@
 const contactEmail =
-  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "team@flomusee.co.kr";
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@gallerynook.com";
 
 const kakaoUrl =
   process.env.NEXT_PUBLIC_KAKAO_CHANNEL_URL ?? "https://pf.kakao.com";

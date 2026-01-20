@@ -14,8 +14,8 @@ export default function Home() {
     <>
       <HeroSection />
       <ProductStorySection />
-      <LookbookSection />
       <IncludedSection />
+      <LookbookSection />
       <HowItWorksSection />
       <PlanTeaserSection />
       <TrustPolicySection />

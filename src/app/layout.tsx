@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display, Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -21,10 +21,16 @@ const playfair = Playfair_Display({
   weight: ["600", "700"],
   display: "swap",
 });
+
+const notoSansKr = Noto_Sans_KR({
+  variable: "--font-noto-sans-kr",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 export const metadata: Metadata = {
-  title: "FLOMUSÉE | 꽃과 예술이 만나는 구독 뮤지엄",
-  description:
-    "계절 꽃과 작가 오브제를 함께 큐레이션하는 구독형 뮤지엄 FLOMUSÉE.",
+  title: "GALLERYNOOK | 작가의 향 구독",
+  description: "집 안의 한 켠, 매달 한 점의 작품과 그 작품을 닮은 향.",
 };
 
 export default function RootLayout({
@@ -35,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${notoSansKr.variable} antialiased`}
       >
         <MainLayout>
           <Header />

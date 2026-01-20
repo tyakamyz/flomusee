@@ -1,46 +1,40 @@
 @import "tailwindcss";
 
 :root {
+  --color-bg: #fbf8f4;
+  --color-surface: #ffffff;
+  --color-surface-2: #f4f0ea;
+  --color-ink: #14120f;
+  --color-muted: #6d6760;
+  --color-border: #e7e1d8;
   --color-primary: #1f3a32;
-  --color-primary-dark: #13261f;
-  --color-primary-soft: #e7f0e8;
-  --color-bg-base: #f8f3ec;
-  --color-bg-surface: #ffffff;
-  --color-bg-subtle: #f3eee6;
-  --color-text-main: #1f1a17;
-  --color-text-muted: #5b554f;
-  --color-text-disabled: #a6a09a;
-  --color-border-subtle: #e5ded4;
-  --color-border-strong: #d1c8bb;
-  --color-accent-coral: #e69a8d;
-  --color-accent-mustard: #d1a540;
+  --color-accent-gold: #c6a56a;
+  --color-spark: #2f5bff;
+  --color-shadow: rgba(20, 18, 15, 0.1);
 }
 
 @theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
   --color-primary: var(--color-primary);
-  --color-primary-dark: var(--color-primary-dark);
-  --color-primary-soft: var(--color-primary-soft);
-  --color-accent-coral: var(--color-accent-coral);
-  --color-accent-mustard: var(--color-accent-mustard);
-  --color-bg-base: var(--color-bg-base);
-  --color-bg-surface: var(--color-bg-surface);
-  --color-bg-subtle: var(--color-bg-subtle);
-  --color-text-main: var(--color-text-main);
-  --color-text-muted: var(--color-text-muted);
-  --color-text-disabled: var(--color-text-disabled);
-  --color-border-subtle: var(--color-border-subtle);
-  --color-border-strong: var(--color-border-strong);
+  --color-accent-gold: var(--color-accent-gold);
+  --color-spark: var(--color-spark);
+  --color-shadow: var(--color-shadow);
   --font-heading: var(--font-playfair), "Cormorant Garamond", var(--font-geist-sans), system-ui, sans-serif;
-  --font-body: "Pretendard", "SUIT", var(--font-geist-sans), system-ui, sans-serif;
+  --font-body: "Pretendard", var(--font-noto-sans-kr), "Noto Sans KR", "SUIT", var(--font-geist-sans), system-ui,
+    sans-serif;
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, rgba(231, 240, 232, 0.4), transparent 32%),
-    radial-gradient(circle at 80% 0%, rgba(230, 218, 200, 0.38), transparent 28%),
-    linear-gradient(180deg, #f8f3ec 0%, #f3eee6 38%, #f8f3ec 100%);
-  color: var(--color-text-main);
+  background: radial-gradient(circle at 20% 10%, rgba(198, 165, 106, 0.08), transparent 45%),
+    linear-gradient(180deg, #fbf8f4 0%, #f6f2ec 52%, #fbf8f4 100%);
+  color: var(--color-ink);
   font-family: var(--font-body);
-  letter-spacing: 0.01em;
+  letter-spacing: 0.005em;
 }
 
 a {
@@ -58,45 +52,35 @@ html {
   }
 }
 
-/* Ensure dark-toned buttons/links keep white text for contrast */
-a.bg-primary,
-a.bg-primary-dark,
-a[class*="bg-[#1f3a32]"],
-button.bg-primary,
-button.bg-primary-dark,
-button[class*="bg-[#1f3a32]"] {
-  color: var(--color-white);
-}
-
 ::selection {
-  background: var(--color-primary-soft);
-  color: var(--color-primary-dark);
+  background: rgba(198, 165, 106, 0.35);
+  color: var(--color-ink);
 }
 
 .text-h1 {
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 3vw, 3rem);
-  line-height: 1.15;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  line-height: 1.12;
   font-weight: 600;
 }
 
 .text-h2 {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 2.4vw, 2.5rem);
-  line-height: 1.2;
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  line-height: 1.18;
   font-weight: 600;
 }
 
 .text-h3 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  line-height: 1.3;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.25;
   font-weight: 600;
 }
 
 .text-h4 {
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   line-height: 1.4;
   font-weight: 600;
 }
@@ -104,21 +88,57 @@ button[class*="bg-[#1f3a32]"] {
 .text-body {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.75rem;
+  line-height: 1.7rem;
   font-weight: 400;
 }
 
 .text-caption {
   font-family: var(--font-body);
-  font-size: 0.8125rem;
-  line-height: 1.25rem;
+  font-size: 0.85rem;
+  line-height: 1.35rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.text-balance {
+  text-wrap: balance;
 }
 
 .noise-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+.lux-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-ink);
+}
+
+.lux-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--color-accent-gold), var(--color-spark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.lux-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-link::after {
+    transition: none;
+  }
 }

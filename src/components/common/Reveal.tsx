@@ -16,7 +16,7 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
 
   const base =
     "transition-all duration-700 ease-out will-change-transform will-change-opacity [transform-origin:50%_60%]";
-  const hidden = prefersReducedMotion ? "" : "translate-y-6 opacity-0 blur-[2px]";
+  const hidden = prefersReducedMotion ? "" : "translate-y-3 opacity-0 blur-[6px]";
   const visible = "translate-y-0 opacity-100 blur-0";
 
   return (

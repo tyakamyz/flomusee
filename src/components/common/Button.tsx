@@ -20,24 +20,25 @@ type ButtonProps =
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-primary text-white shadow-[0_12px_30px_rgba(31,58,50,0.16)] hover:-translate-y-[1px] hover:bg-primary-dark hover:shadow-[0_16px_36px_rgba(31,58,50,0.18)] focus-visible:ring-primary/70",
+    "bg-primary !text-white hover:!text-white active:!text-white shadow-[0_10px_30px_rgba(31,58,50,0.18)] hover:bg-[#2a5247] active:bg-[#173129] hover:shadow-[0_12px_30px_rgba(31,58,50,0.2)]",
   secondary:
-    "bg-primary-soft text-primary shadow-[0_10px_24px_rgba(31,58,50,0.08)] hover:-translate-y-[1px] hover:bg-white hover:text-primary-dark focus-visible:ring-primary/60",
+    "border border-border bg-transparent text-ink hover:border-primary/60 hover:text-primary",
   outline:
-    "border border-border-strong bg-white text-text-main hover:-translate-y-[1px] hover:border-primary hover:text-primary focus-visible:ring-primary/50",
+    "border border-border bg-surface text-ink hover:border-accent-gold/70 hover:text-ink",
   ghost:
-    "text-text-muted hover:-translate-y-[1px] hover:bg-primary-soft hover:text-primary focus-visible:ring-primary/40",
+    "text-ink/80 hover:text-ink",
 };
 
 export function Button(props: ButtonProps) {
   const { children, variant = "primary", className = "", as, ...rest } = props;
-  const styles = `inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base ${variantStyles[variant]} ${className}`;
+  const styles = `inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold tracking-[0.02em] transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg ${variantStyles[variant]} ${className}`;
+  const finalClassName = styles;
 
   if (as === "a" && "href" in rest) {
     const { href, ...anchorProps } =
       rest as React.AnchorHTMLAttributes<HTMLAnchorElement>;
     return (
-      <Link className={styles} href={href} {...anchorProps}>
+      <Link className={finalClassName} href={href} {...anchorProps}>
         {children}
       </Link>
     );
@@ -45,7 +46,7 @@ export function Button(props: ButtonProps) {
 
   const buttonProps = rest as React.ButtonHTMLAttributes<HTMLButtonElement>;
   return (
-    <button className={styles} type="button" {...buttonProps}>
+    <button className={finalClassName} type="button" {...buttonProps}>
       {children}
     </button>
   );

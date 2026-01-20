@@ -19,10 +19,10 @@ export function FAQItem({ item }: { item: FAQ }) {
         aria-expanded={open}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span className="text-base font-semibold text-text-main">{item.question}</span>
+        <span className="text-base font-semibold text-ink">{item.question}</span>
         <span
-          className={`flex h-8 w-8 items-center justify-center rounded-full border border-border-subtle text-sm transition-transform ${
-            open ? "rotate-45 bg-primary-soft text-primary" : "bg-white text-text-muted"
+          className={`flex h-8 w-8 items-center justify-center rounded-full border border-border text-sm transition-transform ${
+            open ? "rotate-45 bg-surface-2 text-ink" : "bg-surface text-muted"
           }`}
           aria-hidden
         >
@@ -30,8 +30,8 @@ export function FAQItem({ item }: { item: FAQ }) {
         </span>
       </button>
       {open ? (
-        <div className="border-t border-border-subtle/80 px-5 py-4">
-          <p className="text-sm leading-6 text-text-muted">{item.answer}</p>
+        <div className="border-t border-border px-5 py-4">
+          <p className="text-sm leading-6 text-muted">{item.answer}</p>
         </div>
       ) : null}
     </Card>

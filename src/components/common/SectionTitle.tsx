@@ -9,18 +9,18 @@ export function SectionTitle({
   title,
   subtitle,
   align = "left",
-  eyebrow = "FLOMUSÉE",
+  eyebrow = "GALLERYNOOK",
 }: SectionTitleProps) {
-  const alignment = align === "center" ? "items-center text-center" : "";
+  const alignment = align === "center" ? "items-center text-center" : "items-start";
 
   return (
     <div className={`flex flex-col gap-3 ${alignment}`}>
-      <p className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.14em] text-text-muted">
-        <span className="h-px w-8 bg-border-subtle" aria-hidden />
-        {eyebrow}
-      </p>
-      <h2 className="text-h2">{title}</h2>
-      {subtitle ? <p className="max-w-2xl text-base text-text-muted">{subtitle}</p> : null}
+      <div className="flex items-center gap-3">
+        <span className="text-caption text-muted">{eyebrow}</span>
+        <span className="h-px w-10 bg-accent-gold/70" aria-hidden />
+      </div>
+      <h2 className="text-h2 text-balance">{title}</h2>
+      {subtitle ? <p className="max-w-2xl text-base text-muted text-balance">{subtitle}</p> : null}
     </div>
   );
 }

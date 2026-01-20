@@ -16,8 +16,8 @@ export function PlanSection() {
           <PlanCard key={plan.name} plan={plan} />
         ))}
       </div>
-      <p className="text-sm text-text-muted">
-        모든 플랜은 화병 회수·세척을 포함합니다. 기업/행사 공간 큐레이션이 필요하면 별도 문의를 남겨주세요.
+      <p className="text-sm text-muted">
+        모든 플랜은 회수·케어 가이드가 포함됩니다. 기업/행사 공간 큐레이션이 필요하면 별도 문의를 남겨주세요.
       </p>
     </Section>
   );
