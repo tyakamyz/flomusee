@@ -6,29 +6,28 @@ export function Footer() {
     <footer className="border-t border-border-subtle bg-bg-subtle">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 text-sm text-text-muted sm:flex-row sm:items-start sm:justify-between sm:px-8 lg:px-12">
         <div className="flex max-w-md flex-col gap-2">
-          <span className="text-base font-semibold text-text-main">FLOMUSÉE</span>
+          <span className="text-base font-semibold text-text-main">GALLERYNOOK</span>
           <p className="text-sm leading-relaxed">
-            집 안에 열리는 작은 미술관. 계절 꽃과 아티스트 오브제를 함께 큐레이션해 전시처럼 즐기는 구독
-            서비스를 만듭니다.
+            집 안의 한 켠, 한 점의 작품과 그 작품을 닮은 향을 함께 보내는 구독입니다.
           </p>
         </div>
         <div className="grid grid-cols-2 gap-6 text-sm sm:grid-cols-3">
           <div className="flex flex-col gap-2">
             <span className="font-semibold text-text-main">Navigation</span>
-            <Link href="/#about" className="transition-colors hover:text-text-main">
-              About
+            <Link href="/" className="transition-colors hover:text-text-main">
+              작가의 향
             </Link>
-            <Link href="/#artists" className="transition-colors hover:text-text-main">
-              Artists
+            <Link href="/subscribe" className="transition-colors hover:text-text-main">
+              구독
             </Link>
-            <Link href="/#plans" className="transition-colors hover:text-text-main">
-              Plans
+            <Link href="/editions" className="transition-colors hover:text-text-main">
+              월호
             </Link>
-            <Link href="/#faq" className="transition-colors hover:text-text-main">
-              FAQ
+            <Link href="/artists" className="transition-colors hover:text-text-main">
+              작가
             </Link>
-            <Link href="/#contact" className="transition-colors hover:text-text-main">
-              Contact
+            <Link href="/about" className="transition-colors hover:text-text-main">
+              브랜드
             </Link>
           </div>
           <div className="flex flex-col gap-2">

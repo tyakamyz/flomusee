@@ -6,8 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
-  title: "FLOMUSÉE | Artists",
-  description: "플로뮤제가 협업하는 작가들과 테마를 소개합니다.",
+  title: "GALLERYNOOK | 작가",
+  description: "갤러리눅이 큐레이션하는 작가와 작품, 향 페어링을 소개합니다.",
 };
 
 export default function ArtistsPage() {

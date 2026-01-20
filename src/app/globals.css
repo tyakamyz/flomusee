@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #1f3a32;
+  --color-primary: #1f3a32; /* Nook Green */
   --color-primary-dark: #13261f;
   --color-primary-soft: #e7f0e8;
-  --color-bg-base: #f8f3ec;
+  --color-bg-base: #faf7f2; /* Paper */
   --color-bg-surface: #ffffff;
   --color-bg-subtle: #f3eee6;
-  --color-text-main: #1f1a17;
-  --color-text-muted: #5b554f;
+  --color-text-main: #12110f; /* Ink */
+  --color-text-muted: #5f5a55;
   --color-text-disabled: #a6a09a;
-  --color-border-subtle: #e5ded4;
+  --color-border-subtle: #e7ded3;
   --color-border-strong: #d1c8bb;
-  --color-accent-coral: #e69a8d;
-  --color-accent-mustard: #d1a540;
+  --color-accent-amber: #c79a4b;
+  --color-accent-rose: #d48c8c;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
   --color-primary-soft: var(--color-primary-soft);
-  --color-accent-coral: var(--color-accent-coral);
-  --color-accent-mustard: var(--color-accent-mustard);
+  --color-accent-amber: var(--color-accent-amber);
+  --color-accent-rose: var(--color-accent-rose);
   --color-bg-base: var(--color-bg-base);
   --color-bg-surface: var(--color-bg-surface);
   --color-bg-subtle: var(--color-bg-subtle);
@@ -35,9 +35,9 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 20%, rgba(231, 240, 232, 0.4), transparent 32%),
-    radial-gradient(circle at 80% 0%, rgba(230, 218, 200, 0.38), transparent 28%),
-    linear-gradient(180deg, #f8f3ec 0%, #f3eee6 38%, #f8f3ec 100%);
+  background: radial-gradient(circle at 18% 14%, rgba(231, 240, 232, 0.3), transparent 32%),
+    radial-gradient(circle at 82% 4%, rgba(231, 222, 211, 0.42), transparent 30%),
+    linear-gradient(180deg, #faf7f2 0%, #f3eee6 48%, #faf7f2 100%);
   color: var(--color-text-main);
   font-family: var(--font-body);
   letter-spacing: 0.01em;

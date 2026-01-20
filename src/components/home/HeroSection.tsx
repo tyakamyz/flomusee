@@ -1,6 +1,6 @@
 import { Button } from "@/components/common/Button";
 import { Section } from "@/components/common/Section";
-import { heroHighlights } from "@/data/site";
+import { hero } from "@/data/site";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -10,32 +10,25 @@ export function HeroSection() {
         <div className="flex max-w-2xl flex-col gap-6">
           <p className="text-sm uppercase tracking-[0.16em] text-text-muted">A small museum at home</p>
           <h1 className="text-h1">
-            집 안에 열리는
-            <br />
-            작은 미술관, 플로뮤제
+            {hero.headline}
           </h1>
           <p className="max-w-xl text-body text-text-muted">
-            플로뮤제는 꽃과 아트 오브제, 향, 스타일링 가이드를 한 박스에 담아 보내는 전시형 구독입니다.
-            배송·회수·세척까지 포함되어 매달 새로운 장면으로 공간을 갈아입힙니다.
+            {hero.subheadline}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Button as="a" href="/subscribe">
-              플랜 자세히 보기
-            </Button>
-            <Button as="a" href="/subscribe/premium" variant="secondary">
-              프리미엄 플랜 살펴보기
-            </Button>
+            {hero.ctas.map((cta) => (
+              <Button key={cta.href} as="a" href={cta.href} variant={cta.href.includes("editions") ? "secondary" : "primary"}>
+                {cta.label}
+              </Button>
+            ))}
           </div>
           <div className="grid gap-3 sm:grid-cols-3">
-            {heroHighlights.map((item) => (
+            {hero.specCard.map((item, idx) => (
               <div
-                key={item.title}
+                key={`${item}-${idx}`}
                 className="rounded-2xl border border-border-subtle/70 bg-white/70 px-4 py-3 shadow-[0_12px_28px_rgba(31,58,50,0.08)] backdrop-blur"
               >
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-text-muted">
-                  {item.title}
-                </p>
-                <p className="text-sm text-text-main">{item.description}</p>
+                <p className="text-sm text-text-main">{item}</p>
               </div>
             ))}
           </div>

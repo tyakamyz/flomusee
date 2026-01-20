@@ -6,8 +6,8 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
-  title: "FLOMUSÉE | 문의하기",
-  description: "구독 문의, 배송 일정 조율, 작가/브랜드 콜라보 제안을 남겨주세요.",
+  title: "GALLERYNOOK | 문의하기",
+  description: "작가의 향 구독 문의, 배송 일정 조율, 작가/브랜드 콜라보 제안을 남겨주세요.",
 };
 
 export default function ContactPage() {

@@ -7,8 +7,8 @@ import { planDetails } from "@/data/site";
 import Link from "next/link";
 
 export const metadata = {
-  title: "FLOMUSÉE | 구독 플랜 비교",
-  description: "Standard, Premium, Gift 플랜을 비교하고 나에게 맞는 구독을 선택하세요.",
+  title: "GALLERYNOOK | 작가의 향 구독 플랜 비교",
+  description: "Standard, Premium, Collector 플랜을 비교하고 나에게 맞는 구독을 선택하세요.",
 };
 
 const columns = ["구성", "배송/회수", "특징"] as const;

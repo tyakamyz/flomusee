@@ -22,9 +22,8 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 export const metadata: Metadata = {
-  title: "FLOMUSÉE | 꽃과 예술이 만나는 구독 뮤지엄",
-  description:
-    "계절 꽃과 작가 오브제를 함께 큐레이션하는 구독형 뮤지엄 FLOMUSÉE.",
+  title: "GALLERYNOOK | 작가의 향 구독",
+  description: "집 안의 한 켠을 작품과 향으로 채우는 갤러리눅의 정기 구독, 작가의 향.",
 };
 
 export default function RootLayout({
