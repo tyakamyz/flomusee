@@ -1,7 +1,14 @@
-<svg width="900" height="675" viewBox="0 0 900 675" xmlns="http://www.w3.org/2000/svg">
-  <rect width="900" height="675" fill="#FFF9F0"/>
-  <rect x="60" y="60" width="780" height="555" rx="30" fill="#FFFFFF" stroke="#111111" stroke-width="10"/>
-  <rect x="120" y="120" width="660" height="200" rx="24" fill="#00E5A8" stroke="#111111" stroke-width="10"/>
-  <rect x="120" y="360" width="320" height="220" rx="24" fill="#FF2E88" stroke="#111111" stroke-width="10"/>
-  <rect x="480" y="360" width="300" height="220" rx="24" fill="#2F5BFF" stroke="#111111" stroke-width="10"/>
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FBF8F4"/>
+      <stop offset="60%" stop-color="#F2EEE8"/>
+      <stop offset="100%" stop-color="#ECE2D8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect x="90" y="90" width="1020" height="720" rx="28" fill="#FFFFFF" stroke="#E7E1D8" stroke-width="2"/>
+  <rect x="170" y="170" width="420" height="520" rx="24" fill="#F6F2ED" stroke="#E7E1D8" stroke-width="2"/>
+  <rect x="650" y="220" width="360" height="360" rx="24" fill="#FAF7F2" stroke="#E7E1D8" stroke-width="2"/>
+  <line x1="220" y1="720" x2="980" y2="720" stroke="#C6A56A" stroke-width="2"/>
 </svg>

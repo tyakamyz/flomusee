@@ -1,15 +1,15 @@
-<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2F5BFF"/>
-      <stop offset="60%" stop-color="#FF2E88"/>
-      <stop offset="100%" stop-color="#FFD400"/>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBF8F4"/>
+      <stop offset="55%" stop-color="#F0EBE4"/>
+      <stop offset="100%" stop-color="#E8DFD5"/>
     </linearGradient>
   </defs>
-  <rect width="1200" height="900" fill="url(#bg)"/>
-  <rect x="80" y="80" width="1040" height="740" rx="36" fill="#FFF9F0" stroke="#111111" stroke-width="10"/>
-  <rect x="160" y="160" width="880" height="420" rx="30" fill="#FFFFFF" stroke="#111111" stroke-width="10"/>
-  <rect x="220" y="220" width="320" height="300" rx="24" fill="#00E5A8" stroke="#111111" stroke-width="10"/>
-  <rect x="580" y="220" width="360" height="300" rx="24" fill="#2F5BFF" stroke="#111111" stroke-width="10"/>
-  <text x="600" y="720" text-anchor="middle" font-size="42" font-family="Arial, sans-serif" font-weight="700" fill="#111111">EDITION HERO</text>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <rect x="120" y="90" width="1360" height="720" rx="32" fill="#FFFFFF" stroke="#E2DBCF" stroke-width="2"/>
+  <rect x="230" y="200" width="520" height="400" rx="24" fill="#F6F1EB" stroke="#E2DBCF" stroke-width="2"/>
+  <rect x="820" y="200" width="520" height="240" rx="24" fill="#F9F6F1" stroke="#E2DBCF" stroke-width="2"/>
+  <rect x="820" y="500" width="520" height="210" rx="24" fill="#F3EEE8" stroke="#E2DBCF" stroke-width="2"/>
+  <line x1="260" y1="730" x2="1060" y2="730" stroke="#C6A56A" stroke-width="2"/>
 </svg>
